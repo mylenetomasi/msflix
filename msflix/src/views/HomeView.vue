@@ -8,7 +8,6 @@
           class="featured-img"
         />
         <div class="detail">
-          <h3>Riverdale</h3>
           <p>
             A pequena e tranquila cidade de Riverdale fica de cabeça para baixo
             quando é atingida pela misteriosa morte de Jason Blossom, um garoto
@@ -68,7 +67,7 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .home {
   .feature-card {
     position: relative;
@@ -99,9 +98,8 @@ export default {
   }
   .search-box {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
     padding: 16px;
     input {
       display: block;
@@ -135,6 +133,7 @@ export default {
         text-transform: uppercase;
         transition: 0.1s;
         height: 50px;
+        margin-left: 20px;
       }
     }
   }
@@ -173,10 +172,12 @@ export default {
           background-color: #496583;
           padding: 8px 16px;
           flex: 1 1 100%;
-          border-radius: 0px 0px 8px 8px;
+          display: flex;
+          flex-direction: row;
           .year {
             color: white;
             font-size: 14px;
+            margin-right: 10px;
           }
           h3 {
             color: white;
@@ -191,12 +192,17 @@ export default {
 .movie-list {
   margin: 0px 8px;
   display: flex;
-  margin: 0px 8px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .movie-link {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+.movie {
+  width: 200px;
+  margin-bottom: 20px;
 }
 .product-image {
   position: relative;
@@ -225,11 +231,13 @@ export default {
   background-color: rgb(163, 1, 152);
   padding: 8px 16px;
   flex: 1 1 100%;
-  border-radius: 0px 0px 8px 8px;
+  display: flex;
+  flex-direction: row;
 }
 .year {
   color: white;
   font-size: 14px;
+  margin-right: 10px;
 }
 h3 {
   color: white;

@@ -1,9 +1,13 @@
 <template>
   <div class="movie-detail">
-    <h2>{{ movie.Title }}</h2>
-    <p>{{ movie.Year }}</p>
-    <img :src="movie.Poster" alt="Movie Poster" class="featured-img" />
-    <p>{{ movie.Plot }}</p>
+    <div class="parte1">
+      <h2>{{ movie.Title }}</h2>
+      <p>{{ movie.Year }}</p>
+      <p>{{ movie.Plot }}</p>
+    </div>
+    <div class="parte2">
+      <img :src="movie.Poster" alt="Movie Poster" class="featured-img" />
+    </div>
   </div>
 </template>
 <script>
@@ -29,9 +33,11 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .movie-detail {
   padding: 16px;
+  display: flex;
+  flex-direction: row;
   h2 {
     color: black;
     font-size: 28px;
@@ -48,5 +54,16 @@ export default {
     font-size: 18px;
     line-height: 1.4;
   }
+}
+.featured-img {
+  display: block;
+  max-width: 300px;
+  margin-bottom: 16px;
+}
+.parte1 {
+  width: 700px;
+}
+.parte2 {
+  margin-left: 30px;
 }
 </style>
